@@ -1,4 +1,4 @@
-package org.jsqlpacker.parser;
+package org.jsqlpacker.packer;
 
 /**
  * Packages given SQL Scripts as a tool to run by DBAs

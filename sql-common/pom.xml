@@ -8,9 +8,9 @@
 		<artifactId>jsqlpacker</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>sql-packer</artifactId>
+	<artifactId>sql-common</artifactId>
 	<version>1.0.0</version>
-	<name>Packaging SQLs</name>
+	<name>Common API for parser and packer</name>
 	<url>https://github.com/venkatsalem/jSQLPacker</url>
 	<packaging>jar</packaging>
 	<properties>
@@ -19,16 +19,12 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.jsqlpacker</groupId>
-			<artifactId>sql-common</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>sql-packer</finalName>
+		<finalName>sql-common</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
