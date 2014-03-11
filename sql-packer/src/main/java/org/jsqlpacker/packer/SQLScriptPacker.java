@@ -7,6 +7,10 @@ package org.jsqlpacker.packer;
  */
 public class SQLScriptPacker {
 
+	public Object createPackage(String sql) {
+		return null;
+	}
+
 	public static void main(String[] args) {
 
 	}

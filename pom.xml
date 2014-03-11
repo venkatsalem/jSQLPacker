@@ -25,16 +25,10 @@
 				<artifactId>sql-common</artifactId>
 				<version>1.0.0</version>
 			</dependency>
-
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>2.4</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>2.6</version>
 			</dependency>
 			<dependency>
 				<groupId>net.sourceforge.jtds</groupId>
@@ -47,10 +41,32 @@
 				<version>5.1.29</version>
 			</dependency>
 			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>1.9.5</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.hsqldb</groupId>
+				<artifactId>hsqldb</artifactId>
+				<version>2.3.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.11</version>
 				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>2.0-rc1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>2.0-rc1</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -80,10 +96,10 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>2.15</version>
-					<configuration>
+<!-- 					<configuration>
 						<skipTests>${skipTests}</skipTests>
 					</configuration>
-				</plugin>
+ -->				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
