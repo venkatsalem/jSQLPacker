@@ -3,10 +3,19 @@ package org.jsqlpacker.parser;
 import java.util.Collection;
 
 /**
- * Packages given SQL Scripts as a tool to run by DBAs
+ * Common API to parse SQL file into separate statement to execute using JDBC
+ * driver
  * 
  * @author venkatsalem@gmail.com
  */
 public interface SQLParser {
-	public Collection<String> parser(String sqlFileContent);
+
+	/**
+	 * Parse the given SQL script and return as separate statements
+	 * 
+	 * @param sqlFileContent
+	 * @return
+	 */
+	public Collection<String> parser(String sqlFileContent)
+			throws SQLParseException;
 }
