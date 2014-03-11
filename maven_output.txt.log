@@ -1,0 +1,12 @@
+Apache Maven 3.0.4
+Maven home: /usr/share/maven
+Java version: 1.7.0_45, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/jdk1.7.0_45/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.5.0-45-generic", arch: "i386", family: "unix"
+[INFO] Error stacktraces are turned on.
+[DEBUG] Reading global settings from /usr/share/maven/conf/settings.xml
+[DEBUG] Reading user settings from /home/nikias/.m2/settings.xml
+[DEBUG] Using local repository at /home/nikias/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10 for /home/nikias/.m2/repository
+[INFO] Scanning for projects...
