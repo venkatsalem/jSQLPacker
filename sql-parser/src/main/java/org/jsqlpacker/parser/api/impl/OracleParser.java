@@ -1,4 +1,4 @@
-package org.jsqlpacker.parser.impl;
+package org.jsqlpacker.parser.api.impl;
 
 import gudusoft.gsqlparser.EDbVendor;
 import gudusoft.gsqlparser.TCustomSqlStatement;
@@ -12,15 +12,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.jsqlpacker.parser.SQLParseException;
-import org.jsqlpacker.parser.SQLParser;
+import org.jsqlpacker.parser.api.SQLParseException;
+import org.jsqlpacker.parser.api.SQLParser;
 
-public class SQLServerParser implements SQLParser {
+public class OracleParser implements SQLParser {
 
 	@Override
 	public Collection<String> parser(String sqlFileContent)
 			throws SQLParseException {
-		TGSqlParser sqlparser = new TGSqlParser(EDbVendor.dbvmssql);
+		TGSqlParser sqlparser = new TGSqlParser(EDbVendor.dbvoracle);
 		sqlparser.setSqltext(sqlFileContent);
 		int ret = sqlparser.parse();
 		if (ret != 0) {
@@ -40,10 +40,6 @@ public class SQLServerParser implements SQLParser {
 						|| sqlStatement instanceof TPlsqlCreateTrigger;
 				if (sql.endsWith(";") && !(plSql)) {
 					sql = sql.substring(0, sql.length() - 1);
-				}
-				// GO statement need not be included in the final script
-				if (sql.equalsIgnoreCase("GO")) {
-					continue;
 				}
 				sqlStatements.add(sql);
 			}

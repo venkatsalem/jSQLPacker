@@ -1,18 +1,18 @@
-package org.jsqlpacker.parser.impl;
+package org.jsqlpacker.parser.api.impl;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jsqlpacker.parser.SQLParser;
+import org.jsqlpacker.parser.api.SQLParser;
 
 /**
- * TODO: Replace with HSQLDB parser
+ * Class parses the SQL Script and converts to XML
  * 
  * @author Mohan Narayanasway
  */
-public class HSQLDBParser implements SQLParser {
+public class SimpleSQLScriptParser implements SQLParser {
 	private static Logger logger = LogManager.getLogger("SQLScriptParser");
 
 	@Override
@@ -30,7 +30,7 @@ public class HSQLDBParser implements SQLParser {
 	public static void main(String[] args) {
 
 		String sampleSql = "Select * from Employee; Select * from Student";
-		if (new HSQLDBParser().parser(sampleSql).size() == 2) {
+		if (new SimpleSQLScriptParser().parser(sampleSql).size() == 2) {
 			logger.warn("It worked");
 		} else {
 			logger.warn("It worked");

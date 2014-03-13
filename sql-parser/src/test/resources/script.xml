@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+	<version database="sqlserver" number="1.0">
+		<sqlfile dir="src/test/resources" />
+	</version>
+</config>
+

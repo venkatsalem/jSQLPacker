@@ -7,7 +7,8 @@ import java.util.Collection;
 import junit.framework.TestCase;
 
 import org.apache.commons.io.IOUtils;
-import org.jsqlpacker.parser.SQLParseException;
+import org.jsqlpacker.parser.api.SQLParseException;
+import org.jsqlpacker.parser.api.impl.SQLServerParser;
 
 public class SQLServerParserTest extends TestCase {
 

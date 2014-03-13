@@ -1,4 +1,4 @@
-package org.jsqlpacker.parser;
+package org.jsqlpacker.parser.api;
 
 public class SQLParseException extends Exception {
 

@@ -1,4 +1,4 @@
-package org.jsqlpacker.parser;
+package org.jsqlpacker.parser.api;
 
 import java.util.Collection;
 
