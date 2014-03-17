@@ -11,6 +11,7 @@ import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.jsqlpacker.common.xml.ScriptXml;
+import org.jsqlpacker.common.xml.ScriptXmlUtil;
 import org.jsqlpacker.parser.api.SQLParseException;
 import org.jsqlpacker.parser.api.SQLParser;
 import org.jsqlpacker.parser.api.impl.SQLParserFactory;
@@ -40,7 +41,7 @@ public class Main {
 
 	}
 
-	public static void main(ConfigXml configXml) {
+	public static void main(ConfigXml configXml) throws Exception {
 		List<VersionXml> versions = configXml.getVersions();
 		Map<String, Map<String, ScriptXml>> databases = new HashMap<String, Map<String, ScriptXml>>();
 		for (VersionXml version : versions) {
@@ -58,6 +59,8 @@ public class Main {
 				ScriptXml scriptXml = versionXml.get(version.getNumber());
 				if (scriptXml == null) {
 					scriptXml = new ScriptXml();
+					scriptXml.setDatabase(version.getDatabase().toLowerCase());
+					scriptXml.setVersion(version.getNumber());
 					versionXml.put(version.getNumber(), scriptXml);
 				}
 				List<File> filesToBeParsed = new ArrayList<>();
@@ -76,6 +79,11 @@ public class Main {
 						throw new RuntimeException("Error while parsing file: " + file.getAbsolutePath());
 					}
 				}
+			}
+		}
+		for (Map.Entry<String, Map<String, ScriptXml>> database : databases.entrySet()) {
+			for (Map.Entry<String, ScriptXml> entry2 : database.getValue().entrySet()) {
+				System.out.println(ScriptXmlUtil.toString(entry2.getValue()));
 			}
 		}
 	}

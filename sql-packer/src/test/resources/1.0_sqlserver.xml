@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<script database="sqlserver" version="1.0">
+    <statement>CREATE TABLE Employee (
+	id INT NOT NULL,
+	firstname VARCHAR(128) NULL,
+	lastname VARCHAR(128) NULL,
+	DateOfBirth DateTime NULL
+)</statement>
+    <statement>ALTER TABLE Employee ADD Comments VARCHAR(4000) NULL</statement>
+</script>
